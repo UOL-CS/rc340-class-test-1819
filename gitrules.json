@@ -1,0 +1,100 @@
+{
+  "setup-files": [
+  ],
+  "rules": [
+    { "rule": "at-least-a-number-of-commits",
+        "number":4,
+        "score-if-correct":0,
+        "stop-on-fail":true
+    },
+    {
+      "rule": "commit-with-message-updated-file",
+      "score-if-correct": 2,
+      "path": "src/main/java/Library.java",
+      "contents": "someLibraryMethod",
+      "ignore-case": true,
+    },
+    {
+      "rule": "commit-with-message-updated-file",
+      "score-if-correct": 2,
+      "path": "src/test/java/LibraryTest.java",
+      "contents": "someLibraryMethod",
+      "ignore-case": true,
+    },
+    {
+      "rule": "commit-with-message-doesnt-update-file",
+      "score-if-correct": 2,
+      "path": "build.gradle",
+      "contents": "someLibraryMethod",
+      "ignore-case": true
+    },
+    {
+      "rule": "commit-with-message-updated-file",
+      "score-if-correct": 2,
+      "path": "build.gradle",
+      "contents": "plugin",
+      "ignore-case": true,
+    },
+    {
+      "rule": "file-untracked-in-head",
+      "score-if-correct": 2,
+      "path": "gradlew.bat",
+      "ignore-case": true
+    },
+    {
+      "rule": "ignored",
+      "score-if-correct": 1,
+      "path": "another.bat",
+      
+    },
+    {
+      "rule": "commit-with-message-updated-file",
+      "score-if-correct": 1,
+      "path": ".gitignore",
+      "contents": "windows",
+      "ignore-case": true,
+    },
+    {
+      "rule": "branch-exists",
+      "branch": "movewrapper",
+      "score-if-correct": 1
+    },
+    {
+      "rule": "file-tracked-in-branch",
+      "path": "src/gradlew",
+      "branch": "movewrapper",
+      "score-if-correct": 1
+    },
+    {
+      "rule": "commit-with-message-was-merged-into-branch",
+      "contents": "wrapper",
+      "branch": "master",
+      "score-if-correct": 2,
+    },
+    {
+      "rule": "commit-with-message-has-tag",
+      "tag": "firstcommit",
+      "contents": "Add gradle project",
+      "score-if-correct": 1,
+    },
+    {
+      "rule":"tag-exists",
+      "tag":"firstcommit",
+      "contents":"Create project",
+      "score-if-correct": 1
+    },
+    {
+      "rule": "commit-with-message-updated-file",
+      "path": "phew.txt",
+      "contents": "final",
+      "ignore-case": true,
+      "score-if-correct": 1,
+    },
+    {
+      "rule": "file-untracked-in-head",
+      "score-if-correct": 1,
+      "path": ".gitruler",
+      "ignore-case": true
+    }
+  ]
+}
